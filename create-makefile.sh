@@ -66,7 +66,7 @@ if [ "$createmakefile" == "yes" ]; then
 	echo -e "\twget https://github.com/trenta3/stdmdoc/raw/master/stdmdoc.cls" >> Makefile
 	echo "" >> Makefile
 	echo "clean:" >> Makefile
-	echo -e "\trm -f *.aux *.log" >> Makefile
+	echo -e "\trm -f *.aux *.log *.out" >> Makefile
 	echo "" >> Makefile
 	echo "# Fine del Makefile" >> Makefile
 
