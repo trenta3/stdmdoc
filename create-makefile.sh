@@ -62,6 +62,7 @@ if [ "$createmakefile" == "yes" ]; then
 		echo -e "\tpdflatex --shell-escape $f.tex" >> Makefile
 	done
 	echo "" >> Makefile
+	echo "# Dovremmo controllare che sia la versione più recente" >> Makefile
 	echo "download:" >> Makefile
 	echo -e "\twget https://github.com/trenta3/stdmdoc/raw/master/stdmdoc.cls" >> Makefile
 	echo "" >> Makefile
