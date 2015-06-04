@@ -30,7 +30,7 @@
 	\setlength\marginparsep{0pt}
 	\setlength\marginparwidth{0pt}
 	}
-\ProcessOptions
+
 
 \setlength\hoffset{-20pt} %Margine sinistro quasi nullo (1in)
 \setlength\voffset{-30pt} %Margine superiore quasi nullo (1in)
@@ -193,6 +193,8 @@
 	\newcommand{\Mtr}{\mathfrak{m}}
 	\newcommand{\fucknullset}{\{0\}}
 }
+
+\ProcessOptions
 
 %---Comandi Strani---
 \newcommand{\TODO}{{\LARGE\bf TO DO}}
