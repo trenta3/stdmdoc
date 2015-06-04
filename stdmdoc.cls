@@ -11,6 +11,8 @@
 \RequirePackage{amssymb}
 \RequirePackage{xifthen}
 \RequirePackage{xparse}
+\RequirePackage{etoolbox}% http://ctan.org/pkg/etoolbox
+
 
 % https://it.sharelatex.com/blog/2011/03/27/how-to-write-a-latex-class-file-and-design-your-own-cv.html
 
@@ -192,6 +194,12 @@
 	\newcommand{\PS}{\mbox{PS }}
 	\newcommand{\Mtr}{\mathfrak{m}}
 	\newcommand{\fucknullset}{\{0\}}
+
+	\makeatletter
+	% Permette di fare sistemi di equazioni
+		\newcommand{\system}[1][]{$\left\{ \begin{array}{c}  \gobblenext }
+		\newcommand{\gobblenext}[1]{#1\@ifnextchar\bgroup{\\ \gobblenext}{ \end{array} \right.$ }}% Gobble next "argument"
+	\makeatother
 }
 
 \ProcessOptions
