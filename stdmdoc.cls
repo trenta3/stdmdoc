@@ -195,7 +195,6 @@
 }
 
 \ProcessOptions
-
 %---Comandi Strani---
 \newcommand{\TODO}{{\LARGE\bf TO DO}}
 
