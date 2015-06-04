@@ -43,8 +43,11 @@ if [ "$createmakefile" == "yes" ]; then
 	echo "# Makefile per la compilazione del progetto LaTeX" > Makefile
 	echo "# Creato $now" >> Makefile
 	echo "" >> Makefile
-	echo ".PHONY: pdf dvi ps compile clean download" >> Makefile
-	echo "compile: pdf dvi ps" >> Makefile
+	echo ".PHONY: pdf dvi ps compile clean download all" >> Makefile
+	echo "compile: pdf" >> Makefile
+	echo -e "\tmake clean" >> Makefile
+	echo "" >> Makefile
+	echo "all: pdf dvi ps" >> Makefile
 	echo -e "\tmake clean" >> Makefile
 	echo "" >> Makefile
 	echo "ps: dvi" >> Makefile
