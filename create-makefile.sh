@@ -64,7 +64,7 @@ if [ "$createmakefile" == "yes" ]; then
 	echo "" >> Makefile
 	echo "# Dovremmo controllare che sia la versione più recente" >> Makefile
 	echo "download:" >> Makefile
-	echo -e "\twget https://github.com/trenta3/stdmdoc/raw/master/stdmdoc.cls" >> Makefile
+	echo -e "\twget -N https://github.com/trenta3/stdmdoc/raw/master/stdmdoc.cls -O stdmdoc.cls" >> Makefile
 	echo "" >> Makefile
 	echo "clean:" >> Makefile
 	echo -e "\trm -f *.aux *.log *.out" >> Makefile
