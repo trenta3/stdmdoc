@@ -159,6 +159,41 @@
 	{\mathbb{H}}
 	{\mathbb{H}_{#1}}}
 
+%nuovi comandi per svariate cose
+\DeclareOption{GeneralMath}
+{
+	\newcommand{\sse}{\Leftrightarrow}
+	\newcommand{\tc}{\mbox{ t.c. }}
+
+	\newcommand{\Norm}[1]{\mid\mid #1 \mid\mid}
+	\newcommand{\abs}[1]{\mid #1 \mid}
+	\newcommand{\scal}[2]{\langle #1 \mid #2 \rangle}
+	\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+
+	\newcommand{\Ker}{\mbox{Ker } }
+	\newcommand{\Deg}{\mbox{deg }}
+	\newcommand{\Det}{\mbox{det }}
+	\newcommand{\Dim}{\mbox{dim }}
+	\newcommand{\End}{\mbox{End }}
+	\newcommand{\Rad}{\mbox{Rad }}
+	\newcommand{\Ann}{\mbox{Ann }}
+	\newcommand{\Rk}{\mbox{rk }}
+	\newcommand{\GL}{\mbox{GL}}
+	\newcommand{\Isom}{\mbox{Isom}}
+	\newcommand{\Fix}{\mbox{Fix }}
+	\newcommand{\Giac}{\mbox{Giac }}
+	\newcommand{\Ort}{\mbox{O}}
+	\newcommand{\Aff}{\mbox{Aff }}
+	\newcommand{\Supp}{\mbox{Supp }}
+	\newcommand{\Span}{\mbox{Span }}
+	\newcommand{\Symm}{\mbox{Sym }}
+	\newcommand{\Img}{\mbox{Im }}
+	\newcommand{\Id}{\mbox{id}}
+	\newcommand{\PS}{\mbox{PS }}
+	\newcommand{\Mtr}{\mathfrak{m}}
+	\newcommand{\fucknullset}{\{0\}}
+}
+
 %---Comandi Strani---
 \newcommand{\TODO}{{\LARGE\bf TO DO}}
 
