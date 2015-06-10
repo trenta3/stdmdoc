@@ -161,6 +161,15 @@
 	{\mathbb{H}}
 	{\mathbb{H}_{#1}}}
 
+\NewDocumentCommand{\de}{gg}{
+  \IfNoValueTF{#1}
+	{\mbox{d}}
+	{\IfNoValueTF{#2}
+		{\errmessage{MUORI STRONZO: Hai usato il de con un solo argomento!! Il dini è triste.}}
+		{\frac{\partial {#1}}{\partial {#2}}}
+	}
+}
+
 %nuovi comandi per svariate cose
 \DeclareOption{GeneralMath}
 {
@@ -201,6 +210,14 @@
 		\newcommand{\gobblenext}[1]{#1\@ifnextchar\bgroup{\\ \gobblenext}{ \end{array} \right.$ }}% Gobble next "argument"
 	\makeatother
 }
+
+\newcommand{\d}{\mbox{d }}
+\NewDocumentCommand{\de}{gg}{
+  \IfNoValueTF{#1}
+	{\partial}
+	{\IfNoValueTF{#2}
+		{\mbox{d }{#1}}
+		{\frac{\partial {#1}}{\partial {#2}}}}
 
 \ProcessOptions
 %---Comandi Strani---
