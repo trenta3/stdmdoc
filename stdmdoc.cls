@@ -124,7 +124,7 @@
 \def\mydeflett#1{\expandafter\def\csname bb#1\endcsname{\mathbb{#1}}
 		\expandafter\def\csname c#1\endcsname{\mathcal{#1}}
 		\expandafter\def\csname k#1\endcsname{\mathfrak{#1}}
-		\expandafter\def\csname b#1\endcsname{\mathbm{#1}}}
+		\expandafter\def\csname b#1\endcsname{\mathbf{#1}}}
 \def\mydefalllett#1{\ifx#1\mydefalllett\else\mydeflett#1\expandafter\mydefalllett\fi}
 \mydefalllett ABCDEFGHIJKLMNOPQRSTUVWXYZ\mydefalllett
 
