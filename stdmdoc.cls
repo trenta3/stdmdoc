@@ -120,21 +120,18 @@
 	{\paragrafo{}}
 	{\paragrafo{#1}}}
 
-%---CAMPI---%
-\NewDocumentCommand{\CC}{g}{
-  \IfNoValueTF{#1}
-	{\mathbb{C}}
-	{\mathbb{C}_{#1}}}
+%mathbb mathcal mathfrak e mathbm per le lettere dell'alfabeto e anche mathbb per quelle greche
+\def\mydeflett#1{\expandafter\def\csname bb#1\endcsname{\mathbb{#1}}
+		\expandafter\def\csname c#1\endcsname{\mathcal{#1}}
+		\expandafter\def\csname k#1\endcsname{\mathfrak{#1}}
+		\expandafter\def\csname b#1\endcsname{\mathbm{#1}}}
+\def\mydefalllett#1{\ifx#1\mydefalllett\else\mydeflett#1\expandafter\mydefalllett\fi}
+\mydefalllett ABCDEFGHIJKLMNOPQRSTUVWXYZ\mydefalllett
 
-\NewDocumentCommand{\KK}{g}{
-  \IfNoValueTF{#1}
-	{\mathbb{K}}
-	{\mathbb{K}_{#1}}}
-
-\NewDocumentCommand{\RR}{g}{
-  \IfNoValueTF{#1}
-	{\mathbb{R}}
-	{\mathbb{R}_{#1}}}
+\def\mydefgreek#1{\expandafter\def\csname b#1\endcsname{\text{\boldmath$\mathbf{\csname #1\endcsname}$}}}
+\def\mydefallgreek#1{\ifx\mydefallgreek#1\else\mydefgreek{#1}%
+   \lowercase{\mydefgreek{#1}}\expandafter\mydefallgreek\fi}
+\mydefallgreek {Gamma}{Delta}{Theta}{Lambda}{Xi}{Pi}{Sigma}{Upsilon}{Phi}{Varphi}{Psi}{Omega}{alpha}{beta}{gamma}{delta}{epsilon}{varepsilon}{zeta}{eta}{theta}{iota}{kappa}{lambda}{mu}{nu}{xi}{omicron}{pi}{rho}{sigma}{tau}{upsilon}{phi}{varphi}{chi}{psi}{omega}\mydefallgreek
 
 \NewDocumentCommand{\FF}{g}{
   \IfNoValueTF{#1}
@@ -146,37 +143,27 @@
 	{\mathbb{Z}}
 	{\mathbb{Z}_{#1}}}
 
-\NewDocumentCommand{\NN}{g}{
-  \IfNoValueTF{#1}
-	{\mathbb{N}}
-	{\mathbb{N}_{#1}}}
-
-\NewDocumentCommand{\EE}{g}{
-  \IfNoValueTF{#1}
-	{\mathbb{E}}
-	{\mathbb{E}_{#1}}}
-
-\NewDocumentCommand{\HH}{g}{
-  \IfNoValueTF{#1}
-	{\mathbb{H}}
-	{\mathbb{H}_{#1}}}
-
 \NewDocumentCommand{\de}{gg}{
   \IfNoValueTF{#1}
 	{\mbox{d}}
 	{\IfNoValueTF{#2}
-		{\errmessage{MUORI STRONZO: Hai usato il de con un solo argomento!! Il dini è triste.}}
+		{\partial_{#1}}
 		{\frac{\partial {#1}}{\partial {#2}}}
 	}
 }
+
 
 %nuovi comandi per svariate cose
 \DeclareOption{GeneralMath}
 {
 	\newcommand{\sse}{\Leftrightarrow}
+	\newcommand{\rar}{\Rightarrow}
+	\newcommand{\ol}[1]{\overline{#1}}
+	\newcommand{\ot}[1]{\widetilde{#1}}
+	\newcommand{\oc}[1]{\widehat{#1}}
 	\newcommand{\tc}{\mbox{ t.c. }}
 
-	\newcommand{\Norm}[1]{\mid\mid #1 \mid\mid}
+	\newcommand{\norma}[1]{\mid\mid #1 \mid\mid}
 	\newcommand{\abs}[1]{\mid #1 \mid}
 	\newcommand{\scal}[2]{\langle #1 \mid #2 \rangle}
 	\newcommand{\floor}[1]{\lfloor #1 \rfloor}
@@ -210,14 +197,6 @@
 		\newcommand{\gobblenext}[1]{#1\@ifnextchar\bgroup{\\ \gobblenext}{ \end{array} \right.$ }}% Gobble next "argument"
 	\makeatother
 }
-
-\newcommand{\d}{\mbox{d }}
-\NewDocumentCommand{\de}{gg}{
-  \IfNoValueTF{#1}
-	{\partial}
-	{\IfNoValueTF{#2}
-		{\mbox{d }{#1}}
-		{\frac{\partial {#1}}{\partial {#2}}}}
 
 \ProcessOptions
 %---Comandi Strani---
