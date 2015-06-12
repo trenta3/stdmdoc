@@ -107,6 +107,16 @@
 	{\paragrafo{Osservazione}}
 	{\paragrafo{Osservazione {\it (#1)}}}}
 
+\NewDocumentCommand{\Proposizione}{g}{
+  \IfNoValueTF{#1}
+	{\paragrafo{Proposizione}}
+	{\paragrafo{Proposizione {\it (#1)}}}}
+
+\NewDocumentCommand{\Esempio}{g}{
+  \IfNoValueTF{#1}
+	{\paragrafo{Esempio}}
+	{\paragrafo{Esempio {\it (#1)}}}}
+
 \NewDocumentCommand{\Achtung}{g}{
   \IfNoValueTF{#1}
 	{\paragrafo{Achtung!}}
