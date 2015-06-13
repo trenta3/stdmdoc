@@ -91,14 +91,14 @@
 \newtheorem{mycor}{Corollario}[section]
 \newtheorem{myobs}{Osservazione}[section]
 
-\newtheorem*{mydef*}{Definizione}[section]
-\newtheorem*{mythm*}{Teorema}[section]
-\newtheorem*{myex*}{Esercizio}[section]
-\newtheorem*{myes*}{Esempio}[section]
-\newtheorem*{mylemma*}{Lemma}[section]
-\newtheorem*{myprop*}{Proposizione}[section]
-\newtheorem*{mycor*}{Corollario}[section]
-\newtheorem*{myobs*}{Osservazione}[section]
+\newtheorem*{mydef*}{Definizione}
+\newtheorem*{mythm*}{Teorema}
+\newtheorem*{myex*}{Esercizio}
+\newtheorem*{myes*}{Esempio}
+\newtheorem*{mylemma*}{Lemma}
+\newtheorem*{myprop*}{Proposizione}
+\newtheorem*{mycor*}{Corollario}
+\newtheorem*{myobs*}{Osservazione}
 
 \NewDocumentCommand{\Teorema}{g}{
   \IfNoValueTF{#1}
