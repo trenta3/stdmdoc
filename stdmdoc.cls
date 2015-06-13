@@ -82,23 +82,23 @@
 \newcommand{\Nota}[1]{\marginpar{\footnotesize{\vskip 4ex}#1}}
 
 % Parole più usate in matematica
-\newtheorem{mydef}{Definizione}[paragraph]
-\newtheorem{mythm}{Teorema}[paragraph]
-\newtheorem{myex}{Esercizio}[paragraph]
-\newtheorem{myes}{Esempio}[paragraph]
-\newtheorem{mylemma}{Lemma}[paragraph]
-\newtheorem{myprop}{Proposizione}[paragraph]
-\newtheorem{mycor}{Corollario}[paragraph]
-\newtheorem{myobs}{Osservazione}[paragraph]
+\newtheorem{mydef}{Definizione}[section]
+\newtheorem{mythm}{Teorema}[section]
+\newtheorem{myex}{Esercizio}[section]
+\newtheorem{myes}{Esempio}[section]
+\newtheorem{mylemma}{Lemma}[section]
+\newtheorem{myprop}{Proposizione}[section]
+\newtheorem{mycor}{Corollario}[section]
+\newtheorem{myobs}{Osservazione}[section]
 
-\newtheorem*{mydef*}{Definizione}[paragraph]
-\newtheorem*{mythm*}{Teorema}[paragraph]
-\newtheorem*{myex*}{Esercizio}[paragraph]
-\newtheorem*{myes*}{Esempio}[paragraph]
-\newtheorem*{mylemma*}{Lemma}[paragraph]
-\newtheorem*{myprop*}{Proposizione}[paragraph]
-\newtheorem*{mycor*}{Corollario}[paragraph]
-\newtheorem*{myobs*}{Osservazione}[paragraph]
+\newtheorem*{mydef*}{Definizione}[section]
+\newtheorem*{mythm*}{Teorema}[section]
+\newtheorem*{myex*}{Esercizio}[section]
+\newtheorem*{myes*}{Esempio}[section]
+\newtheorem*{mylemma*}{Lemma}[section]
+\newtheorem*{myprop*}{Proposizione}[section]
+\newtheorem*{mycor*}{Corollario}[section]
+\newtheorem*{myobs*}{Osservazione}[section]
 
 \NewDocumentCommand{\Teorema}{g}{
   \IfNoValueTF{#1}
