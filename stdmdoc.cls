@@ -9,9 +9,14 @@
 \RequirePackage[italian]{babel}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
+\RequirePackage{amsthm} % Per definire \newtheorem
+
 \RequirePackage{xifthen}
 \RequirePackage{xparse}
 \RequirePackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\RequirePackage[linktoc=all]{hyperref} % Per i collegamenti ipertestuali. [linktoc=all] mette i link nell'indice
+\RequirePackage{color} % Per i comandi \textcolor{'colore'}{'testo da colorare'} e \color{'colore'}
+\RequirePackage{hhline} % Per fare tabelle variegate
 
 
 % https://it.sharelatex.com/blog/2011/03/27/how-to-write-a-latex-class-file-and-design-your-own-cv.html
@@ -73,10 +78,28 @@
 
 % Oggetti utili per dare spaziatura al corpo del testo e per aggiungere note a margine
 \newcommand{\Nextblock}{{\vskip 1.5ex}\noindent}
-\newcommand{\paragrafo}[1]{{\vskip 3ex}{\normalfont\large\bf\noindent{#1}}{\newline}}
+\newcommand{\paragrafo}[1]{{\vskip 3ex}{\normalfont\large\bf\noindent{#1}}{\hskip 3ex}}
 \newcommand{\Nota}[1]{\marginpar{\footnotesize{\vskip 4ex}#1}}
 
 % Parole più usate in matematica
+\newtheorem{mydef}{Definizione}[paragraph]
+\newtheorem{mythm}{Teorema}[paragraph]
+\newtheorem{myex}{Esercizio}[paragraph]
+\newtheorem{myes}{Esempio}[paragraph]
+\newtheorem{mylemma}{Lemma}[paragraph]
+\newtheorem{myprop}{Proposizione}[paragraph]
+\newtheorem{mycor}{Corollario}[paragraph]
+\newtheorem{myobs}{Osservazione}[paragraph]
+
+\newtheorem*{mydef*}{Definizione}[paragraph]
+\newtheorem*{mythm*}{Teorema}[paragraph]
+\newtheorem*{myex*}{Esercizio}[paragraph]
+\newtheorem*{myes*}{Esempio}[paragraph]
+\newtheorem*{mylemma*}{Lemma}[paragraph]
+\newtheorem*{myprop*}{Proposizione}[paragraph]
+\newtheorem*{mycor*}{Corollario}[paragraph]
+\newtheorem*{myobs*}{Osservazione}[paragraph]
+
 \NewDocumentCommand{\Teorema}{g}{
   \IfNoValueTF{#1}
 	{\paragrafo{Teorema}}
@@ -154,11 +177,18 @@
 	{\mathbb{Z}_{#1}}}
 
 \NewDocumentCommand{\de}{gg}{
-  \IfNoValueTF{#1}
-	{\mbox{d}}
-	{\IfNoValueTF{#2}
-		{\partial_{#1}}
-		{\frac{\partial {#1}}{\partial {#2}}}
+	\IfNoValueTF{#1}
+		{\mbox{d}}
+		{\IfNoValueTF{#2}	{\mbox{d}#1}
+			{\frac{\mbox{d}#1}{\mbox{d}#2}}
+	}
+}
+
+\NewDocumentCommand{\dpar}{gg}{
+	\IfNoValueTF{#1}
+		{\partial}
+		{\IfNoValueTF{#2}	{\partial_{#1}}
+			{\frac{\partial #1}{\partial #2}}
 	}
 }
 
