@@ -197,7 +197,8 @@
 \DeclareOption{GeneralMath}
 {
 	\newcommand{\sse}{\Leftrightarrow}
-	\newcommand{\rar}{\Rightarrow}
+	\newcommand{\Rar}{\Rightarrow}
+	\newcommand{\rar}{\rightarrow}
 	\newcommand{\ol}[1]{\overline{#1}}
 	\newcommand{\ot}[1]{\widetilde{#1}}
 	\newcommand{\oc}[1]{\widehat{#1}}
