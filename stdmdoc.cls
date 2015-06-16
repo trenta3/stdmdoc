@@ -178,8 +178,8 @@
 
 \NewDocumentCommand{\de}{gg}{
 	\IfNoValueTF{#1}
-		{\mbox{d}}
-		{\IfNoValueTF{#2}	{\mbox{d}#1}
+		{\mbox{ d}}
+		{\IfNoValueTF{#2}	{\mbox{ d}#1}
 			{\frac{\mbox{d}#1}{\mbox{d}#2}}
 	}
 }
