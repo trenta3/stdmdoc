@@ -234,6 +234,7 @@
 
 	\makeatletter
 	% Permette di fare sistemi di equazioni
+		\newcommand{\hsystem}[1][]{$\left. \begin{array}{c} \gobblenext }%
 		\newcommand{\system}[1][]{$\left\{ \begin{array}{c}  \gobblenext }
 		\newcommand{\gobblenext}[1]{#1\@ifnextchar\bgroup{\\ \gobblenext}{ \end{array} \right.$ }}% Gobble next "argument"
 	\makeatother
