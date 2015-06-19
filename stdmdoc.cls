@@ -217,6 +217,7 @@
 	\newcommand{\Rad}{\mbox{Rad }}
 	\newcommand{\Ann}{\mbox{Ann }}
 	\newcommand{\Rk}{\mbox{rk }}
+	\newcommand{\Tr}{\mbox{tr }}
 	\newcommand{\GL}{\mbox{GL}}
 	\newcommand{\Isom}{\mbox{Isom}}
 	\newcommand{\Fix}{\mbox{Fix }}
