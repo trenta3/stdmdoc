@@ -188,7 +188,7 @@
 	\IfNoValueTF{#1}
 		{\partial}
 		{\IfNoValueTF{#2}	{\partial_{#1}}
-			{\frac{\partial #1}{\partial #2}}
+			{\frac{\partial {#1}}{\partial {#2}}}
 	}
 }
 
