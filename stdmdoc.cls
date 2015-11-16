@@ -166,7 +166,7 @@
 		\expandafter\def\csname k#1\endcsname{\mathfrak{#1}}
 		\expandafter\def\csname bl#1\endcsname{\mathbf{#1}}}
 \def\mydefalllett#1{\ifx#1\mydefalllett\else\mydeflett#1\expandafter\mydefalllett\fi}
-\mydefalllett ABCDEFGHIJKLMNOPQRSTUVWXYZ\mydefalllett
+\mydefalllett ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\mydefalllett
 
 \def\mydefgreek#1{\expandafter\def\csname bl#1\endcsname{\text{\boldmath$\mathbf{\csname #1\endcsname}$}}}
 \def\mydefallgreek#1{\ifx\mydefallgreek#1\else\mydefgreek{#1}%
