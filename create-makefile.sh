@@ -1,5 +1,5 @@
 #!/bin/bash
-now=date
+now=$(date);
 createmakefile=yes;
 
 if [ -e "Makefile" ]; then
@@ -43,36 +43,25 @@ if [ "$createmakefile" == "yes" ]; then
 	echo "# Makefile per la compilazione del progetto LaTeX" > Makefile
 	echo "# Creato $now" >> Makefile
 	echo "" >> Makefile
-	echo ".PHONY: pdf dvi ps compile clean download all" >> Makefile
-	echo "compile: pdf" >> Makefile
-	echo -e "\tmake clean" >> Makefile
-	echo "" >> Makefile
-	echo "all: pdf dvi ps" >> Makefile
-	echo -e "\tmake clean" >> Makefile
-	echo "" >> Makefile
-	echo "ps: dvi" >> Makefile
+	echo -n ".PHONY: alldocuments " >> Makefile
 	for f in "${texfilestocompile[@]}"; do
-		echo -e "\tdvips $f.dvi" >> Makefile
+		echo -n "$f " >> Makefile
 	done
-	echo "" >> Makefile
-	echo "dvi: download" >> Makefile
-	for f in "${texfilestocompile[@]}"; do
-		echo -e "\tlatex --shell-escape $f.tex" >> Makefile
-	done
-	echo "" >> Makefile
-	echo "pdf: download" >> Makefile
+	# Se dobbiamo compilare tutti i documenti
+	echo -e "\n\nalldocuments: " >> Makefile
+	echo -e "\twget https://github.com/trenta3/stdmdoc/raw/master/stdmdoc.cls -O stdmdoc.cls" >> Makefile
 	for f in "${texfilestocompile[@]}"; do
 		echo -e "\tpdflatex --shell-escape $f.tex" >> Makefile
 	done
-	echo "" >> Makefile
-	echo "# Dovremmo controllare che sia la versione più recente" >> Makefile
-	echo "download:" >> Makefile
-	echo -e "\twget https://github.com/trenta3/stdmdoc/raw/master/stdmdoc.cls -O stdmdoc.cls" >> Makefile
-	echo "" >> Makefile
-	echo "clean:" >> Makefile
 	echo -e "\trm -f *.aux *.log *.out" >> Makefile
-	echo "" >> Makefile
-	echo "# Fine del Makefile" >> Makefile
+	# Altrimenti inseriamo una sezione per ciascuno
+	for f in "${texfilestocompile[@]}"; do
+		echo -e "\n$f:" >> Makefile
+		echo -e "\twget https://github.com/trenta3/stdmdoc/raw/master/stdmdoc.cls -O stdmdoc.cls" >> Makefile
+		echo -e "\tpdflatex --shell-escape $f.tex" >> Makefile
+		echo -e "\trm -f *.aux *.log *.out" >> Makefile
+	done
+	echo -e "\n# Fine del Makefile" >> Makefile
 
 	echo "Makefile creato"
 	echo -e "Ricordati, se hai aggiunto dei files nuovi, di dare il comando\tgit add NOMEFILE"
