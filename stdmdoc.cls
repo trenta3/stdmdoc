@@ -196,6 +196,8 @@
 	}
 }
 
+\newcommand{\dde}[1]{\frac{\text{ d}}{\text{ d} #1}}
+
 \NewDocumentCommand{\dpar}{gg}{
 	\IfNoValueTF{#1}
 		{\partial}
